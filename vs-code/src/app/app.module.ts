@@ -3,8 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
+
 import { AppComponent } from './app.component';
 
+import { InterceptorModule } from './interceptors/interceptor-module';
 import { ListPessoasComponent } from './list-pessoas/list-pessoas.component';
 import { PessoaService } from './services/pessoa.service';
 
@@ -14,11 +16,14 @@ import { PessoaService } from './services/pessoa.service';
     ListPessoasComponent
   ],
   imports: [
+    InterceptorModule,
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [PessoaService],
+  providers: [
+    PessoaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
