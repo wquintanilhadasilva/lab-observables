@@ -1,0 +1,19 @@
+Listagem de pessoas click
+<br>
+<input type="text" [(ngModel)]="filtro" (keyup)="handleFilterChange($event.key)" placeholder="filtro">
+<button (click)="getPessoas()">Carregar</button>
+<ul>
+  <li *ngFor="let p of pessoas">
+    {{p.id}}: {{p.nome}} - {{p.sobreNome}}
+  </li>
+</ul>
+
+<hr> 
+
+Pessoas com Observable
+<br>
+<ul>
+  <li *ngFor="let p of listaPessoasObservable">
+    {{p.id}}: {{p.nome}} - {{p.sobreNome}}
+  </li>
+</ul>
